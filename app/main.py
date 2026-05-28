@@ -11,6 +11,16 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.staticfiles import StaticFiles
 app=FastAPI(title="Task Manager API",description="A Modern FastAPI Backend  With JWT Authentitcation And Task Management ", version="1.0.0")
 
+
+
+@app.get("/")
+async def home():
+
+    return {
+        "message": "FastAPI Task Manager API is running",
+        "docs": "/docs"
+    }
+
 #middleware
 app.add_middleware(
 
